@@ -14,12 +14,11 @@ describe('lcm', () => {
     { inputs: [222, 123], expectedOutput: 9102 },
   ];
 
-  test.each(testCases)(
-    'lcm(%i, %i) returns %i',
-    ({ inputs, expectedOutput }) => {
+  testCases.forEach(({ inputs, expectedOutput }) => {
+    test(`lcm(${inputs}) returns ${expectedOutput}`, () => {
       const [a, b] = inputs;
       expect(lcm(a, b)).toBe(expectedOutput);
       expect(lcm(b, a)).toBe(expectedOutput);
-    }
-  );
+    });
+  });
 });
