@@ -1,7 +1,7 @@
 {
-  "name": "simple-ts-node",
+  "name": "my-simple-rsa.ts",
   "version": "1.0.0",
-  "repository": "https://github.com/osawa-koki/simple-ts-node.git",
+  "repository": "https://github.com/osawa-koki/my-simple-rsa.ts.git",
   "author": "osawa-koki <github@osawa.dev>",
   "license": "Apache-2.0",
   "scripts": {
