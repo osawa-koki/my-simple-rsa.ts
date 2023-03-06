@@ -7,9 +7,10 @@ import modExp from './fn.modExp';
  * @returns 暗号化されたデータ。
  */
 function encrypt(publicKey: [number, number], message: string): string {
+  const _message = encodeURIComponent(message);
   const [n, e] = publicKey;
   const blockSize = Math.floor(Math.log10(n) / Math.log10(2)) - 1;
-  const blocks = message.split('').reduce((acc: string[], char: string) => {
+  const blocks = _message.split('').reduce((acc: string[], char: string) => {
     const code = char.charCodeAt(0);
     const padded = code.toString().padStart(blockSize, '0');
     acc.push(padded);

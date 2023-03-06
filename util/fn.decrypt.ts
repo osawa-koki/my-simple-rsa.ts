@@ -15,7 +15,8 @@ function decrypt(privateKey: [number, number], encrypted: string): string {
     modExp(parseInt(block, 10), d, n)
   );
   const decryptedString = String.fromCharCode(...decryptedChars);
-  return decryptedString;
+  const decodedString = decodeURIComponent(decryptedString);
+  return decodedString;
 }
 
 export default decrypt;
