@@ -1,6 +1,6 @@
 # my-simple-rsa.ts
 
-RSA暗号をTypeScriptで実装してみた！  
+🐷🐷🐷 RSA暗号をTypeScriptで実装してみた！  
 
 ## 実行方法
 
