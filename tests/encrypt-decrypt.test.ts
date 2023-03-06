@@ -56,6 +56,8 @@ const messages = [
   '===',
   '^^^',
   '|||',
+  '<<<',
+  '>>>',
 ];
 
 describe('Encrypt-Decrypt', () => {
