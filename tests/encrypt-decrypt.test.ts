@@ -78,6 +78,8 @@ const messages = [
   'ヤユヨ',
   'ラリルレロ',
   'ワヲン',
+  '電子計算機',
+  '電子計算機科学',
 ];
 
 describe('Encrypt-Decrypt', () => {
