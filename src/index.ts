@@ -5,7 +5,7 @@ import encrypt from '../util/fn.encrypt';
 import decrypt from '../util/fn.decrypt';
 import isPrime from '../util/fn.isPrime';
 
-const argv = yargs(process.argv.slice(2))
+const argv = yargs(process.argv)
   .options({
     prime1: { type: 'number', demandOption: true },
     prime2: { type: 'number', demandOption: true },
