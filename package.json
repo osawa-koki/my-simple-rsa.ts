@@ -1,15 +1,16 @@
 {
-  "name": "simple-ts-node",
+  "name": "my-simple-rsa.ts",
   "version": "1.0.0",
-  "repository": "https://github.com/osawa-koki/simple-ts-node.git",
+  "repository": "https://github.com/osawa-koki/my-simple-rsa.ts.git",
   "author": "osawa-koki <github@osawa.dev>",
   "license": "Apache-2.0",
   "scripts": {
-    "dev": "ts-node-dev ./src/index.ts",
+    "dev": "ts-node ./src/index.ts",
     "start": "nodemon --exec ts-node ./src/index.ts",
     "lint": "eslint --ext .ts ./src --fix --max-warnings 0",
     "prettify": "prettier --write ./src/**/*.ts",
-    "test": "jest"
+    "test": "jest",
+    "testlog": "jest > test.log"
   },
   "devDependencies": {
     "@types/jest": "^29.4.0",
@@ -27,6 +28,7 @@
     "typescript": "*"
   },
   "dependencies": {
-    "eslint-config-prettier": "^8.6.0"
+    "eslint-config-prettier": "^8.6.0",
+    "yargs": "^17.7.1"
   }
 }
