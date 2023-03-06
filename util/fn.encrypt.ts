@@ -17,9 +17,7 @@ function encrypt(publicKey: [number, number], message: string): string {
   }, []);
   const encryptedBlocks = blocks.map((block) => {
     const num = parseInt(block, 10);
-    return modExp(num, e, n)
-      .toString()
-      .padStart(blockSize + 1, '0');
+    return modExp(num, e, n).toString();
   });
   return encryptedBlocks.join('');
 }

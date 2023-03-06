@@ -13,10 +13,10 @@ console.log(`公開鍵: ${publicKey}`);
 const privateKey = getPrivateKey(prime1, prime2, publicKey);
 console.log(`秘密鍵: ${privateKey}`);
 
-const encrypted = encrypt(privateKey, message);
+const encrypted = encrypt(publicKey, message);
 
 // 暗号化されたデータを復号する
-const decrypted = decrypt(publicKey, encrypted);
+const decrypted = decrypt(privateKey, encrypted);
 
 console.log(`元のメッセージ: ${message}`);
 console.log(`暗号化されたメッセージ: ${encrypted}`);
