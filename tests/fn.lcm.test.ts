@@ -12,6 +12,7 @@ describe('lcm', () => {
     { inputs: [168, 216], expectedOutput: 1512 },
     { inputs: [111, 123], expectedOutput: 4551 },
     { inputs: [222, 123], expectedOutput: 9102 },
+    { inputs: [0, 0], expectedOutput: 0 },
   ];
 
   testCases.forEach(({ inputs, expectedOutput }) => {
@@ -19,6 +20,21 @@ describe('lcm', () => {
       const [a, b] = inputs;
       expect(lcm(a, b)).toBe(expectedOutput);
       expect(lcm(b, a)).toBe(expectedOutput);
+    });
+  });
+
+  const badTestCases = [
+    { inputs: [2.5, 3] },
+    { inputs: [2, 3.5] },
+    { inputs: [-2, 3] },
+    { inputs: [2, -3] },
+  ];
+
+  badTestCases.forEach(({ inputs }) => {
+    test(`lcm(${inputs}) throws an error`, () => {
+      const [a, b] = inputs;
+      expect(() => lcm(a, b)).toThrowError();
+      expect(() => lcm(b, a)).toThrowError();
     });
   });
 });

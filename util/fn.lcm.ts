@@ -10,6 +10,12 @@ function lcm(a: number, b: number): number {
   if (a === 0 || b === 0) {
     return 0;
   }
+  if (a % 1 !== 0 || b % 1 !== 0) {
+    throw new Error('引数は整数である必要があります。');
+  }
+  if (a < 0 || b < 0) {
+    throw new Error('引数は正の整数である必要があります。');
+  }
   return (a * b) / gcd(a, b);
 }
 
