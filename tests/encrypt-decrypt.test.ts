@@ -60,7 +60,7 @@ describe('Encrypt-Decrypt', () => {
     // 暗号化されたデータを復号する
     const decrypted = decrypt(privateKey, encrypted);
 
-    it(`Encrypt-Decrypt: ${message}`, () => {
+    it(`Encrypt-Decrypt: ${message} | prime1: ${prime1}, prime2: ${prime2}, message: ${message}`, () => {
       expect(decrypted).toBe(message);
     });
   }
