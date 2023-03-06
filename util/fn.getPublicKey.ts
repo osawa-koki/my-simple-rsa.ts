@@ -6,10 +6,14 @@ import gcd from './fn.gcd';
  * @param q - q (素数2)
  * @returns 公開鍵 (n, e)
  */
-function getPublicKey(p: number, q: number): [number, number] {
+function getPublicKey(p: number, q: number): [number, number] | null {
   const n = p * q;
   const phi = (p - 1) * (q - 1);
   let e = 65537; // The default value for the public exponent.
+
+  if (p === q) {
+    return null;
+  }
 
   while (gcd(e, phi) !== 1) {
     e++;

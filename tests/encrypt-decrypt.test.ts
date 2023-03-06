@@ -50,9 +50,27 @@ describe('Encrypt-Decrypt', () => {
     const prime2 = primes[Math.floor(Math.random() * primes.length)];
     const message = messages[Math.floor(Math.random() * messages.length)];
 
-    // 公開鍵・秘密鍵を生成する
+    // 公開鍵を生成する
     const publicKey = getPublicKey(prime1, prime2);
+    if (publicKey === null) {
+      if (prime1 === prime2) {
+        continue;
+      }
+      throw new Error(
+        `publicKey is null: prime1: ${prime1}, prime2: ${prime2}`
+      );
+    }
+
+    // 秘密鍵を生成する
     const privateKey = getPrivateKey(prime1, prime2, publicKey);
+    if (privateKey === null) {
+      if (prime1 === prime2) {
+        continue;
+      }
+      throw new Error(
+        `privateKey is null: prime1: ${prime1}, prime2: ${prime2}`
+      );
+    }
 
     // データを暗号化する
     const encrypted = encrypt(publicKey, message);

@@ -10,10 +10,15 @@ function getPrivateKey(
   p: number,
   q: number,
   publicKey: [number, number]
-): [number, number] {
+): [number, number] | null {
   const [n, e] = publicKey;
   const phi = lcm(p - 1, q - 1);
   let d = modInv(e, phi);
+
+  if (p === q) {
+    return null;
+  }
+
   // dが正の数になるようにする
   while (d < 0) {
     d += phi;

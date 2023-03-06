@@ -26,8 +26,15 @@ Promise.resolve(argv).then(({ prime1, prime2, message }) => {
 
   // 公開鍵・秘密鍵を生成する
   const publicKey = getPublicKey(prime1, prime2);
+  if (publicKey === null) {
+    throw new Error('publicKey is null.');
+  }
   console.log(`公開鍵: ${publicKey}`);
+
   const privateKey = getPrivateKey(prime1, prime2, publicKey);
+  if (privateKey === null) {
+    throw new Error('privateKey is null.');
+  }
   console.log(`秘密鍵: ${privateKey}`);
 
   const encrypted = encrypt(publicKey, message);
