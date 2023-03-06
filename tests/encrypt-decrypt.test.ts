@@ -50,10 +50,11 @@ describe('Encrypt-Decrypt', () => {
     const prime2 = primes[Math.floor(Math.random() * primes.length)];
     const message = messages[Math.floor(Math.random() * messages.length)];
 
-    // 公開鍵を生成する
     if (prime1 === prime2) {
       continue;
     }
+
+    // 公開鍵を生成する
     const publicKey = getPublicKey(prime1, prime2);
     if (publicKey === null) {
       throw new Error(
