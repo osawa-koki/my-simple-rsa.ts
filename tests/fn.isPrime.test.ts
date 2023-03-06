@@ -23,10 +23,9 @@ describe('isPrime', () => {
     { input: 2147483647, expectedOutput: true },
   ];
 
-  test.each(testCases)(
-    'isPrime(%i) returns %p',
-    ({ input, expectedOutput }) => {
+  testCases.forEach(({ input, expectedOutput }) => {
+    test(`isPrime(${input}) returns ${expectedOutput}`, () => {
       expect(isPrime(input)).toBe(expectedOutput);
-    }
-  );
+    });
+  });
 });
