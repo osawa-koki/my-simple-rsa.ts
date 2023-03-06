@@ -5,6 +5,15 @@
  * @returns aとbの最大公約数。
  */
 function gcd(a: number, b: number): number {
+  if (a < 0 || b < 0) {
+    throw new Error('引数は正の整数である必要があります。');
+  }
+  if (a % 1 !== 0 || b % 1 !== 0) {
+    throw new Error('引数は正の整数である必要があります。');
+  }
+  if (a === 0) {
+    return b;
+  }
   if (b === 0) {
     return a;
   }

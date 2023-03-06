@@ -21,4 +21,19 @@ describe('gcd', () => {
       expect(gcd(b, a)).toBe(expectedOutput);
     });
   });
+
+  const badTestCases = [
+    { inputs: [2.5, 3] },
+    { inputs: [2, 3.5] },
+    { inputs: [-2, 3] },
+    { inputs: [2, -3] },
+  ];
+
+  badTestCases.forEach(({ inputs }) => {
+    test(`gcd(${inputs}) throws an error`, () => {
+      const [a, b] = inputs;
+      expect(() => gcd(a, b)).toThrowError();
+      expect(() => gcd(b, a)).toThrowError();
+    });
+  });
 });
