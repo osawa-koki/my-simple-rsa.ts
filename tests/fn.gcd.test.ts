@@ -12,6 +12,7 @@ describe('gcd', () => {
     { inputs: [168, 216], expectedOutput: 24 },
     { inputs: [111, 123], expectedOutput: 3 },
     { inputs: [222, 123], expectedOutput: 3 },
+    { inputs: [0, 0], expectedOutput: 0 },
   ];
 
   testCases.forEach(({ inputs, expectedOutput }) => {
