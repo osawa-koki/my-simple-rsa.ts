@@ -1,7 +1,7 @@
 /**
- * Checks whether the given number is a prime number.
- * @param n - The number to check.
- * @returns `true` if the number is prime, `false` otherwise.
+ * 受け取った数値が素数かどうかを判定します。
+ * @param n - 判定する数値
+ * @returns 素数ならtrue、そうでなければfalse
  */
 function isPrime(n: number): boolean {
   if (n < 2) {
