@@ -3,6 +3,7 @@ import getPublicKey from '../util/fn.getPublicKey';
 import getPrivateKey from '../util/fn.getPrivateKey';
 import encrypt from '../util/fn.encrypt';
 import decrypt from '../util/fn.decrypt';
+import isPrime from '../util/fn.isPrime';
 
 const argv = yargs(process.argv.slice(2))
   .options({
@@ -13,6 +14,13 @@ const argv = yargs(process.argv.slice(2))
   .help().argv;
 
 Promise.resolve(argv).then(({ prime1, prime2, message }) => {
+  if (isPrime(prime1) === false) {
+    throw new Error('prime1 is not a prime number.');
+  }
+  if (isPrime(prime2) === false) {
+    throw new Error('prime2 is not a prime number.');
+  }
+
   // 公開鍵・秘密鍵を生成する
   const publicKey = getPublicKey(prime1, prime2);
   console.log(`公開鍵: ${publicKey}`);
