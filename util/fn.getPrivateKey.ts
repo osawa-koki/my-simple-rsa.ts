@@ -7,7 +7,11 @@ import lcm from './fn.lcm';
  * @param publicKey - The public key [n, e].
  * @returns The private key [n, d].
  */
-function getPrivateKey(p: number, q: number, publicKey: [number, number]): [number, number] {
+function getPrivateKey(
+  p: number,
+  q: number,
+  publicKey: [number, number]
+): [number, number] {
   const [n, e] = publicKey;
   const phi = lcm(p - 1, q - 1);
   let d = modInv(e, phi);
