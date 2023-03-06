@@ -28,6 +28,7 @@
     "typescript": "*"
   },
   "dependencies": {
-    "eslint-config-prettier": "^8.6.0"
+    "eslint-config-prettier": "^8.6.0",
+    "yargs": "^17.7.1"
   }
 }
