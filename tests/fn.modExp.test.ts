@@ -6,9 +6,8 @@ describe('modExp', () => {
     { inputs: [3, 7, 13], expectedOutput: 3 },
   ];
 
-  testCases.forEach((obj) => {
-    const [a, b, m] = obj.inputs;
-    const expectedOutput = obj.expectedOutput;
+  testCases.forEach(({ inputs, expectedOutput }) => {
+    const [a, b, m] = inputs;
     test(`modExp(${a}, ${b}, ${m}) returns ${expectedOutput}`, () => {
       expect(modExp(a, b, m)).toBe(expectedOutput);
     });
