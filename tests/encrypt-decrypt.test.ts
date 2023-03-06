@@ -45,7 +45,7 @@ describe('Encrypt-Decrypt', () => {
     'rat',
   ];
 
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 500; i++) {
     const prime1 = primes[Math.floor(Math.random() * primes.length)];
     const prime2 = primes[Math.floor(Math.random() * primes.length)];
     const message = messages[Math.floor(Math.random() * messages.length)];
