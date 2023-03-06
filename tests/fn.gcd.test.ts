@@ -14,11 +14,11 @@ describe('gcd', () => {
     { inputs: [222, 123], expectedOutput: 3 },
   ];
 
-  test.each(testCases)(
-    'gcd(%i, %i) returns %i',
-    ({ inputs, expectedOutput }) => {
+  testCases.forEach(({ inputs, expectedOutput }) => {
+    test(`gcd(${inputs}) returns ${expectedOutput}`, () => {
       const [a, b] = inputs;
       expect(gcd(a, b)).toBe(expectedOutput);
-    }
-  );
+      expect(gcd(b, a)).toBe(expectedOutput);
+    });
+  });
 });
