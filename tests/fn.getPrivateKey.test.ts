@@ -8,6 +8,12 @@ describe('getPrivateKey', () => {
     expectedPrivateKey: [number, number];
   }[] = [
     {
+      p: 3,
+      q: 5,
+      publicKey: [15, 65537],
+      expectedPrivateKey: [15, 1],
+    },
+    {
       p: 61,
       q: 53,
       publicKey: [3233, 17],
