@@ -15,5 +15,4 @@ function decrypt(privateKey: [number, number], encrypted: string): string {
   return decryptedString;
 }
 
-
 export default decrypt;
