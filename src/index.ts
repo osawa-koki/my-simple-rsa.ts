@@ -20,6 +20,9 @@ Promise.resolve(argv).then(({ prime1, prime2, message }) => {
   if (isPrime(prime2) === false) {
     throw new Error('prime2 is not a prime number.');
   }
+  if (prime1 === prime2) {
+    throw new Error('prime1 and prime2 must be different.');
+  }
 
   // 公開鍵・秘密鍵を生成する
   const publicKey = getPublicKey(prime1, prime2);
