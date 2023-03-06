@@ -8,9 +8,12 @@ import modExp from './fn.modExp';
  */
 function decrypt(privateKey: [number, number], encrypted: string): string {
   const [n, d] = privateKey;
-  const encryptedBlocks = encrypted.match(/.{1,3}/g) || [];
-  const encryptedChars = encryptedBlocks.map((block) => parseInt(block, 10));
-  const decryptedChars = encryptedChars.map((c) => modExp(c, d, n));
+  const blockSize = Math.floor(Math.log10(n) / Math.log10(2)) - 1;
+  const encryptedBlocks =
+    encrypted.match(new RegExp(`.{1,${blockSize + 1}}`, 'g')) || [];
+  const decryptedChars = encryptedBlocks.map((block) =>
+    modExp(parseInt(block, 10), d, n)
+  );
   const decryptedString = String.fromCharCode(...decryptedChars);
   return decryptedString;
 }
